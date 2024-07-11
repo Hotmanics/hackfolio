@@ -3,6 +3,8 @@ pragma solidity ^0.8.19;
 
 import "../contracts/YourContract.sol";
 import "./DeployHelpers.s.sol";
+import "../contracts/UserProfile.sol";
+import {MockErc721UriStorage} from "../test/mocks/MockErc721UriStorage.sol";
 
 contract DeployScript is ScaffoldETHDeploy {
     error InvalidPrivateKey(string);
@@ -16,13 +18,30 @@ contract DeployScript is ScaffoldETHDeploy {
         }
         vm.startBroadcast(deployerPrivateKey);
 
-        YourContract yourContract =
-            new YourContract(vm.addr(deployerPrivateKey));
-        console.logString(
-            string.concat(
-                "YourContract deployed at: ", vm.toString(address(yourContract))
-            )
+        MockErc721UriStorage mockErc721UriStorage = new MockErc721UriStorage();
+        mockErc721UriStorage.mint(
+            0x42bcD9e66817734100b86A2bab62d9eF3B63E92A,
+            "ipfs://QmZ6X4VwdowJVWYuR32A4duU4MXyc9P4pUVkCUdZHmh7vN"
         );
+
+        mockErc721UriStorage.mint(
+            0x42bcD9e66817734100b86A2bab62d9eF3B63E92A,
+            "ipfs://QmZjGDbEYBMc8k4aQY78PxJtt1Hqw4ErG8jMjLfy1h3xzu"
+        );
+
+        // mockErc721UriStorage.mint(0x42bcD9e66817734100b86A2bab62d9eF3B63E92A);
+
+        new UserProfile();
+
+        // YourContract yourContract = new YourContract(
+        //     vm.addr(deployerPrivateKey)
+        // );
+        // console.logString(
+        //     string.concat(
+        //         "YourContract deployed at: ",
+        //         vm.toString(address(yourContract))
+        //     )
+        // );
 
         vm.stopBroadcast();
 
