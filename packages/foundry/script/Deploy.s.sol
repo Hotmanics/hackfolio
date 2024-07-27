@@ -20,12 +20,12 @@ contract DeployScript is ScaffoldETHDeploy {
 
         MockErc721UriStorage mockErc721UriStorage = new MockErc721UriStorage();
         mockErc721UriStorage.mint(
-            0x42bcD9e66817734100b86A2bab62d9eF3B63E92A,
+            0xc12935f79B9b10A151129ec9a54745d3b017ff4b,
             "ipfs://QmZ6X4VwdowJVWYuR32A4duU4MXyc9P4pUVkCUdZHmh7vN"
         );
 
         mockErc721UriStorage.mint(
-            0x42bcD9e66817734100b86A2bab62d9eF3B63E92A,
+            0xc12935f79B9b10A151129ec9a54745d3b017ff4b,
             "ipfs://QmZjGDbEYBMc8k4aQY78PxJtt1Hqw4ErG8jMjLfy1h3xzu"
         );
 

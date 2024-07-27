@@ -7,7 +7,7 @@ import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 const deployedContracts = {
   31337: {
     MockErc721UriStorage: {
-      address: "0x68b1d87f95878fe05b998f19b66f4baba5de1aed",
+      address: "0xa82ff9afd8f496c3d6ac40e2a0f282e47488cfc9",
       abi: [
         {
           type: "constructor",
@@ -514,7 +514,7 @@ const deployedContracts = {
       },
     },
     UserProfile: {
-      address: "0x59b670e9fa9d0a427751af201d676719a970857b",
+      address: "0xf5059a5d33d5853360d16c683c16e67980206f36",
       abi: [
         {
           type: "function",
